@@ -1,0 +1,9 @@
+<h1>Tokens</h1>
+
+<% @tokens.each do |token| %>
+  <hr>
+  <h2>Name: <%= token.name %></h2>
+  <h3>Ticker: <%= token.ticker %></h3>
+  <h3>Price: $<%= token.price %></h3>
+  <hr>
+<% end %>
