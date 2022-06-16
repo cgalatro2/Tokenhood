@@ -7,11 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = 'Welcome to Tokenhood'
-      redirect_to 'http://localhost:3000/tokens'
     else
       render 'new'
-      redirect_to 'http://localhost:3000/tokens'
     end
+    redirect_to 'http://localhost:3000/'
   end
 
   def user_params
