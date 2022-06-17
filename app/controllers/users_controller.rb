@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
-    redirect_to 'http://localhost:3000/'
+    redirect_to root_path
   end
 
   def user_params

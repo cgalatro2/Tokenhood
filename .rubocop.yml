@@ -1,8 +1,6 @@
 # This is the configuration used to check the rubocop source code.
 
-inherit_from: .rubocop_todo.yml
 require:
-  - rubocop/cop/internal_affairs
   - rubocop-performance
   - rubocop-rspec
   - rubocop-rake
@@ -15,7 +13,7 @@ AllCops:
     - "tmp/**/*"
     - ".git/**/*"
     - "bin/*"
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
   SuggestExtensions: false
 
 Naming/PredicateName:
@@ -119,7 +117,6 @@ Naming/InclusiveLanguage:
 
 RSpec/FilePath:
   Exclude:
-    - spec/rubocop/cop/internal_affairs/redundant_let_rubocop_config_new_spec.rb
     - spec/rubocop/formatter/junit_formatter_spec.rb
 
 RSpec/PredicateMatcher:
@@ -147,21 +144,6 @@ Performance/StartWith:
 
 RSpec/StubbedMock:
   Enabled: false
-
-InternalAffairs/ExampleDescription:
-  Include:
-    - "spec/rubocop/cop/**/*.rb"
-
-InternalAffairs/UndefinedConfig:
-  Include:
-    - "lib/rubocop/cop/**/*.rb"
-  Exclude:
-    - "lib/rubocop/cop/correctors/**/*.rb"
-    - "lib/rubocop/cop/mixin/**/*.rb"
-
-InternalAffairs/StyleDetectedApiUse:
-  Exclude:
-    - "lib/rubocop/cop/mixin/percent_array.rb"
 
 Gemspec/DependencyVersion:
   Enabled: true
